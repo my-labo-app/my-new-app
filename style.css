@@ -44,7 +44,7 @@ body {
 }
 
 .ad-space {
-  height: 50px;
+  height: 55px;
 }
 
 /* ===== Main ===== */
@@ -90,7 +90,7 @@ body {
 
 .calendar > div {
   border: 0.6px solid #e5e5e5;
-  height: 100px;
+  height: 95.5px;
   padding: 4px;
 
   display: grid;
