@@ -25,6 +25,19 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateHeader(year, month) {
     headerMonth.textContent = `${year} ${monthNames[month]}`;
   }
+  
+  /* ===== Todayへ戻るボタン ===== */
+  document.getElementById("go-today").addEventListener("click", () => {
+  const todayIndex =
+    (today.getFullYear() - START_YEAR) * 12 + today.getMonth();
+
+  scrollContainer.scrollTo({
+    left: window.innerWidth * todayIndex,
+    behavior: "smooth"
+  });
+
+  updateHeader(today.getFullYear(), today.getMonth());
+});
 
   /* ===== month picker ===== */
   document.getElementById("open-picker").addEventListener("click", () => {
