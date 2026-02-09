@@ -106,10 +106,9 @@ document.addEventListener("DOMContentLoaded", () => {
       r.textContent = rokuyo[diffDays % 6];
 
       cell.addEventListener("click", () => {
-        selectedDate.textContent = `${month + 1}月${day}日`;
-        bottomSheet.classList.add("active");
+      openSheet(`${month + 1}月${day}日`);
       });
-
+      
       cell.appendChild(d);
       cell.appendChild(r);
       cal.appendChild(cell);
