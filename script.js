@@ -172,9 +172,18 @@ while (cal.children.length < 42) {
     }
   });
 
+
+  // 背景タップで閉じる
+  bottomSheet.addEventListener("click", (e) => {
+    if (e.target === bottomSheet) {
+      bottomSheet.classList.remove("active");
+    }
+  });
+
   let startY = 0;
   let currentY = 0;
   let isDragging = false;
+  
 addEventListener("touchmove", (e) => {
     if (!isDragging) return;
     currentY = e.touches[0].clientY;
