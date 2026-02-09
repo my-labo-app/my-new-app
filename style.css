@@ -46,9 +46,24 @@ body {
 .dropdown-btn {
   border: none;
   background: none;
-  color: #555555;
   font-size: 18px;
   cursor: pointer;
+}
+
+.dropdown-btn {
+  color: #555;
+  -webkit-tap-highlight-color: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+}
+
+.dropdown-btn:focus {
+  outline: none;
+}
+
+.dropdown-btn:active {
+  color: #555;
 }
 
 .ad-space {
