@@ -165,42 +165,46 @@ while (cal.children.length < 42) {
     updateHeader(year, month);
   });
 
-  /* ===== Bottom Sheet ===== */
-  bottomSheet.addEventListener("click", (e) => {
-    if (e.target === bottomSheet) {
-      bottomSheet.classList.remove("active");
-    }
-  });
+/* ===== Bottom Sheet ===== */
+let startY = 0;
+let currentY = 0;
+let isDragging = false;
 
+/* 日付タップで開く（これは既にあるけど念のため） */
+function openSheet(text) {
+  selectedDate.textContent = text;
+  bottomSheet.classList.add("active");
+}
 
-  // 背景タップで閉じる
-  bottomSheet.addEventListener("click", (e) => {
-    if (e.target === bottomSheet) {
-      bottomSheet.classList.remove("active");
-    }
-  });
+/* タッチ開始 */
+bottomSheet.addEventListener("touchstart", (e) => {
+  startY = e.touches[0].clientY;
+  isDragging = true;
+});
 
-  let startY = 0;
-  let currentY = 0;
-  let isDragging = false;
-  
-addEventListener("touchmove", (e) => {
-    if (!isDragging) return;
-    currentY = e.touches[0].clientY;
-    const diff = currentY - startY;
-    if (diff > 0) {
-      bottomSheet.style.transform = `translateY(${diff}px)`;
-    }
-  });
+/* スワイプ中 */
+bottomSheet.addEventListener("touchmove", (e) => {
+  if (!isDragging) return;
 
-  bottomSheet.addEventListener("touchend", () => {
-    isDragging = false;
-    if (currentY - startY > 100) {
-      bottomSheet.classList.remove("active");
-    }
-    bottomSheet.style.transform = "";
-    startY = 0;
-    currentY = 0;
-  });
+  currentY = e.touches[0].clientY;
+  const diff = currentY - startY;
+
+  if (diff > 0) {
+    bottomSheet.style.transform = `translateY(${diff}px)`;
+  }
+});
+
+/* 指を離した */
+bottomSheet.addEventListener("touchend", () => {
+  isDragging = false;
+
+  if (currentY - startY > 120) {
+    bottomSheet.classList.remove("active");
+  }
+
+  bottomSheet.style.transform = "";
+  startY = 0;
+  currentY = 0;
+});
 
 });
