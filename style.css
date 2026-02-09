@@ -16,7 +16,7 @@ body {
   left: 0;
   right: 0;
 
-  height: 100px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -44,7 +44,7 @@ body {
 }
 
 .ad-space {
-  height: 50px;
+  height: 80px;
 }
 
 /* ===== Main ===== */
