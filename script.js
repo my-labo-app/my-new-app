@@ -28,10 +28,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ===== month picker ===== */
   document.getElementById("open-picker").addEventListener("click", () => {
-    picker.showPicker();
+    picker.focus();
   });
 
-  picker.addEventListener("change", () => {
+  picker.addEventListener("input", () => {
     const [y, m] = picker.value.split("-");
     const target = document.querySelector(
       `.calendar-container[data-year="${y}"][data-month="${Number(m)}"]`
