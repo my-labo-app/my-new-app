@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const selectedDate = document.getElementById("selectedDate");
 
   /* ===== 定数 ===== */
-  const START_YEAR = 2026;
-  const END_YEAR = 2030;
+  const START_YEAR = 2025;
+  const END_YEAR = 2040;
 
   const monthNames = [
     "January","February","March","April","May","June",
