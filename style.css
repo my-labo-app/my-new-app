@@ -16,7 +16,7 @@ body {
   left: 0;
   right: 0;
 
-  height: 60px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
