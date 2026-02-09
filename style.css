@@ -44,7 +44,7 @@ body {
 }
 
 .ad-space {
-  height: 55px;
+  height: 50px;
 }
 
 /* ===== Main ===== */
@@ -74,7 +74,7 @@ body {
 }
 
 .weekdays {
-  font-size: 12px;
+  font-size: 10px;
   display: grid;
   grid-template-columns: repeat(7,1fr);
   text-align: center;
