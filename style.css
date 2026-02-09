@@ -1,0 +1,185 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #ffffff;
+  color: #333;
+}
+
+/* ===== Header ===== */
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 12px;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  z-index: 1000;
+}
+
+.header-center {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.icon-btn,
+.dropdown-btn {
+  border: none;
+  background: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.ad-space {
+  height: 50px;
+}
+
+/* ===== Main ===== */
+.main-content {
+  padding-top: 56px;
+  padding-bottom: 0;
+}
+
+/* ===== Calendar Scroll ===== */
+.calendar-scroll {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.calendar-container {
+  flex: 0 0 100vw;
+  padding: 1px;
+  padding-bottom: 60px;
+  scroll-snap-align: start;
+}
+
+.month-title {
+  display: none; /* ← ヘッダーに統合 */
+}
+
+.weekdays {
+  font-size: 12px;
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+  text-align: center;
+}
+
+.weekdays .sat { color: #2563eb; }
+.weekdays .sun { color: #dc2626; }
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+}
+
+.calendar > div {
+  border: 0.6px solid #e5e5e5;
+  height: 80px;
+  padding: 4px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.date {
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.rokuyo {
+  justify-self: end;
+  font-size: 10px;
+  color: #888;
+}
+
+.today {
+  background: #e0f2fe;
+}
+
+.other-month {
+  color: #bbb;
+  background: #fafafa;
+}
+
+/* ===== FAB ===== */
+#add-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 80px;
+
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  font-size: 32px;
+
+  border: none;
+  background: #4f46e5;
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(0,0,0,.25);
+  z-index: 1000;
+}
+
+/* ===== Bottom Menu ===== */
+.bottom-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  background: #fff;
+  border-top: 1px solid #e5e5e5;
+}
+
+.bottom-menu button {
+  border: none;
+  background: none;
+  font-size: 14px;
+}
+
+/* ===== Bottom Sheet ===== */
+.bottom-sheet {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: -60%;
+  height: 60%;
+
+  background: #fff;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 -4px 20px rgba(0,0,0,.15);
+  transition: bottom .3s ease;
+  z-index: 2000;
+}
+
+.bottom-sheet.active {
+  bottom: 0;
+}
+
+.sheet-handle {
+  width: 40px;
+  height: 4px;
+  background: #ccc;
+  border-radius: 2px;
+  margin: 8px auto;
+}
